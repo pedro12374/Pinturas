@@ -17,16 +17,6 @@ def ler_Pasta(caminho):
 	temp = glob.glob('*.jpg')
 	return temp
 
-
-
-imagem = cv2.imread('Romero.jpg')
-
-
-
-
-totR = totG = totB = GsR = GsG = GsB = []
-
-
 def Contar_Pixels(img):
 
 	altura = len(img)
@@ -56,13 +46,18 @@ def Distribuicao(V_Entrada,V_Saida,tamanho):
 		V_Saida.append(temp)
 	print 'ok'
 
-print("--- %s seconds ---" % (time.time() - start_time))
-
 def Gerar_Distribuicao(Nome,vetor_Saida,tamanho):
 	temp = open(Nome+'.dat','w')
 	for i in range(tamanho):
 		temp.write( str(i)+ '\t'+str(vetor_Saida[i])+'\n')
 
+
+imagem = cv2.imread('Romero.jpg')
+
+totR = totG = totB = GsR = GsG = GsB = []
+
+
+print("--- %s seconds ---" % (time.time() - start_time))
 
 
 
