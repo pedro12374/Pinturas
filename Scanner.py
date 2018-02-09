@@ -45,9 +45,20 @@ def Gerar_Distribuicao(Nome,vetor_Saida,tamanho):
 		temp.write( str(i)+ '\t'+str(vetor_Saida[i])+'\n')
 
 
+os.chdir('Van.gogh.paintings')
+dire = os.listdir(os.getcwd())
 
-k=[]
-u = Contar_Pixels('Romero.jpg')
-print totG
-Distribuicao(totG,k,256)
-print k
+for i in dire:
+	os.chdir("/home/haerter/Pinturas/Van.gogh.paintings")
+	k = ler_Pasta(i)
+	print "ok 1 " + i
+	for j in k:
+		totR=[]
+		totB=[]
+		totG=[]
+		Contar_Pixels(j)
+		R = Calcular_Media(totR)
+		G =	Calcular_Media(totG)
+		B = Calcular_Media(totB)
+		Gerar_Media('med-'+j,R,G,B)
+		print "Pintura Gerada " + j
